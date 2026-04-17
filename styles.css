@@ -1,11 +1,5 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@import "flowbite/src/themes/default";
-
-@plugin "flowbite/plugin";
-@source "./node_modules/flowbite";
-
 body {
     background-image: url("./media/images/bg.jpg");
     background-size: cover;
@@ -24,7 +18,7 @@ body {
 
 @layer components {
     .mybutton {
-        @apply text-white focus:outline-none px-5 py-3 bg-gradient-to-r from-yellow-500 to-red-700 hover:from-yellow-600 hover:to-red-800 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer font-semibold;
+        @apply text-white focus:outline-none px-5 py-3 bg-linear-to-r from-yellow-500 to-red-700 hover:from-yellow-600 hover:to-red-800 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer font-semibold;
     }
 
     .feature {
