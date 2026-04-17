@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Нововодолазька Автошкола</title>
     <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body class="min-h-screen bg-slate-950 text-white">
@@ -592,25 +593,32 @@
                 </div>
 
                 <!-- BODY -->
-                <form class="p-5 space-y-4">
+                <form id="contact-form" class="p-5 space-y-4">
                     
                     <div>
                         <label class="block mb-2 text-sm">Ваш email</label>
-                        <input type="email"
+                        <input type="email" id="contact-form-email" name="email"
                             class="w-full p-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                             placeholder="example@gmail.com" required>
                     </div>
 
                     <div>
+                        <label class="block mb-2 text-sm">Ваш ім'я</label>
+                        <input type="text" id="contact-form-name" name="name"
+                            class="w-full p-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+                            placeholder="Дмитро" required>
+                    </div>
+                    
+                    <div>
                         <label class="block mb-2 text-sm">Телефон</label>
-                        <input type="text"
+                        <input type="text" id="contact-form-phone" name="phone"
                             class="w-full p-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                             placeholder="+380..." required>
                     </div>
 
                     <div>
                         <label class="block mb-2 text-sm">Тип курсу</label>
-                        <select class="w-full p-2.5 rounded-lg bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-blue-400">
+                        <select id="contact-form-course_type" name="course_type" class="w-full p-2.5 rounded-lg bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-blue-400">
                             <option class="text-black">Теорія</option>
                             <option class="text-black">Практика</option>
                             <option class="text-black">Теорія + Практика</option>
@@ -619,7 +627,7 @@
 
                     <div>
                         <label class="block mb-2 text-sm">Категорія</label>
-                        <select class="w-full p-2.5 rounded-lg bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-blue-400">
+                        <select id="contact-form-course_category" name="course_category" class="w-full p-2.5 rounded-lg bg-white/10 border border-white/20 text-white focus:ring-2 focus:ring-blue-400">
                             <option class="text-black">A (мото понад 50куб)</option>
                             <option class="text-black">А1 (мото до 50куб)</option>
                             <option class="text-black">В (легкові авто)</option>
@@ -631,7 +639,7 @@
                             Повідомлення (за бажанням)
                         </label>
                         <textarea
-                            id="description"
+                            id="contact-form-message" name="message"
                             rows="4"
                             placeholder="Певні запитання..."
                             class="w-full p-3 rounded-lg bg-white/10 border border-white/20 
@@ -652,5 +660,8 @@
     </div>
 
     <script src="./flowbite.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
