@@ -1,0 +1,12 @@
+{
+  "theory": [
+    { "category": "А", "price": "5 000 грн", "duration": "1–2 тижні" },
+    { "category": "А1", "price": "5 000 грн", "duration": "1–2 місяці" },
+    { "category": "В", "price": "5 000 грн", "duration": "1–2 місяці" }
+  ],
+  "practice": [
+    { "category": "А", "price": "15000-25200 грн", "duration": "1-2 місяці" },
+    { "category": "А1", "price": "15000-25200 грн", "duration": "1-2 місяці" },
+    { "category": "В", "price": "20000-30500 грн", "duration": "1-2 місяці" }
+  ]
+}
