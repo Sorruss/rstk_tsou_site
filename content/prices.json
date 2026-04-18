@@ -1,0 +1,19 @@
+{
+  "title": "Ціни",
+  "theory_text": "Теорія",
+  "practice_text": "Практика",
+  "category_text": "Категорія",
+  "price_text": "Ціна",
+  "duration_text": "Термін",
+  
+  "theory": [
+    { "category": "А", "price": "5 000 грн", "duration": "1–2 тижні" },
+    { "category": "А1", "price": "5 000 грн", "duration": "1–2 місяці" },
+    { "category": "В", "price": "5 000 грн", "duration": "1–2 місяці" }
+  ],
+  "practice": [
+    { "category": "А", "price": "15000-25200 грн", "duration": "1-2 місяці" },
+    { "category": "А1", "price": "15000-25200 грн", "duration": "1-2 місяці" },
+    { "category": "В", "price": "20000-30500 грн", "duration": "1-2 місяці" }
+  ]
+}

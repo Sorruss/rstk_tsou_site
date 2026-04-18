@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 body {
+    /* ЗАДНІЙ ФОН */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./media/images/bg.jpg");
     background-size: cover;
     background-position: center;
@@ -9,7 +10,7 @@ body {
 }
 
 .background-facility {
-    background-image: url("./media/images/carousel/3.jpg");
+    background-image: url("./media/images/carousel/3.jpg");     /* "ПРО НАС" КАРТИНКА */
     background-size: cover;
     background-position: center;
     border-top-left-radius: 1.5rem;
@@ -18,7 +19,7 @@ body {
 
 @layer components {
     .mybutton {
-        @apply text-white focus:outline-none px-5 py-3 bg-linear-to-r from-yellow-500 to-red-700 hover:from-yellow-600 hover:to-red-800 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer font-semibold;
+        @apply text-white focus:outline-none px-5 py-3 bg-linear-to-r from-yellow-600 to-red-700 hover:from-yellow-700 hover:to-red-800 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer font-semibold;
     }
 
     .feature {

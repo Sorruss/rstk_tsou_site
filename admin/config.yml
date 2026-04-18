@@ -1,75 +1,70 @@
 backend:
   name: git-gateway
   branch: main
-  commit_messages:
-    create: Create {{collection}} “{{slug}}”
-    update: Update {{collection}} “{{slug}}”
-    delete: Delete {{collection}} “{{slug}}”
-    uploadMedia: Upload “{{path}}”
-    deleteMedia: Delete “{{path}}”
-    openAuthoring: '{{message}}'
 
-media_folder: "media/images"
-public_folder: "/media/images"
+media_folder: "media/images/uploads"
+public_folder: "/media/images/uploads"
 
-locale: 'ua'
-
-issue_reports:
-  url: https://github.com/Sorruss/rstk_tsou_site/issues/new
-
-logo:
-  src: https://avtoshkola-nv.netlify.app/media/images/logo.png
-  show_in_header: true
-
-site_url: https://avtoshkola-nv.netlify.app
-display_url: https://avtoshkola-nv.netlify.app
+locale: "uk"
 
 collections:
-  # === ГОЛОВНА ===
-  - name: "site"
-    label: "Загальні налаштування"
-    files:
-      - file: "content/site.json"
-        label: "Сайт"
-        name: "site"
-        fields:
-          - { label: "Назва", name: "title", widget: "string" }
-          - { label: "Опис", name: "description", widget: "text" }
-          - { label: "Логотип", name: "logo", widget: "image" }
 
-  # === ПРО НАС ===
+  # =========================
+  # ПРО НАС
+  # =========================
   - name: "about"
     label: "Про нас"
     files:
       - file: "content/about.json"
-        label: "Про нас"
+        label: "Секція 'Про нас'"
         name: "about"
         fields:
           - { label: "Заголовок", name: "title", widget: "string" }
           - { label: "Текст", name: "text", widget: "text" }
-          - { label: "Фото секції", name: "image", widget: "image" }
+          - { label: "Зображення", name: "image", widget: "image" }
 
-  # === ПЕРЕВАГИ ===
+  # =========================
+  # ПЕРЕВАГИ
+  # =========================
   - name: "features"
     label: "Переваги"
-    folder: "content/features"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Назва", name: "title", widget: "string" }
-      - { label: "Опис", name: "description", widget: "text" }
-      - { label: "Іконка", name: "icon", widget: "image" }
+    files:
+      - file: "content/features.json"
+        label: "Переваги"
+        name: "features"
+        fields:
+          - label: "Список переваг"
+            name: "features"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Назва", name: "title", widget: "string" }
+              - { label: "Опис", name: "description", widget: "text" }
+              - { label: "Іконка", name: "icon", widget: "image" }
 
-  # === ГАЛЕРЕЯ ===
+  # =========================
+  # ГАЛЕРЕЯ
+  # =========================
   - name: "gallery"
-    label: "Фото"
-    folder: "content/gallery"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Зображення", name: "image", widget: "image" }
+    label: "Галерея"
+    files:
+      - file: "content/gallery.json"
+        label: "Фото"
+        name: "gallery"
+        fields:
+          - { label: "Заголовок", name: "title", widget: "string" }
+          - label: "Карусель"
+            name: "carousel"
+            widget: "list"
+            summary: "{{fields}}"
+            field:
+              label: "Назва файлу (наприклад 1.jpg)"
+              name: "image"
+              widget: "string"
 
-  # === ЦІНИ ===
+  # =========================
+  # ЦІНИ
+  # =========================
   - name: "prices"
     label: "Ціни"
     files:
@@ -77,9 +72,19 @@ collections:
         label: "Ціни"
         name: "prices"
         fields:
+          - { label: "Заголовок", name: "title", widget: "string" }
+
+          - { label: "Текст 'Теорія'", name: "theory_text", widget: "string" }
+          - { label: "Текст 'Практика'", name: "practice_text", widget: "string" }
+
+          - { label: "Категорія (заголовок)", name: "category_text", widget: "string" }
+          - { label: "Ціна (заголовок)", name: "price_text", widget: "string" }
+          - { label: "Термін (заголовок)", name: "duration_text", widget: "string" }
+
           - label: "Теорія"
             name: "theory"
             widget: "list"
+            summary: "{{fields.category}} — {{fields.price}}"
             fields:
               - { label: "Категорія", name: "category", widget: "string" }
               - { label: "Ціна", name: "price", widget: "string" }
@@ -88,12 +93,15 @@ collections:
           - label: "Практика"
             name: "practice"
             widget: "list"
+            summary: "{{fields.category}} — {{fields.price}}"
             fields:
               - { label: "Категорія", name: "category", widget: "string" }
               - { label: "Ціна", name: "price", widget: "string" }
               - { label: "Термін", name: "duration", widget: "string" }
 
-  # === КОНТАКТИ ===
+  # =========================
+  # КОНТАКТИ
+  # =========================
   - name: "contacts"
     label: "Контакти"
     files:
@@ -101,7 +109,28 @@ collections:
         label: "Контакти"
         name: "contacts"
         fields:
+          - { label: "Заголовок", name: "title", widget: "string" }
           - { label: "Телефон", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Адреса", name: "address", widget: "string" }
-          - { label: "Google Maps iframe", name: "map", widget: "text" }
+
+  # =========================
+  # ФУТЕР
+  # =========================
+  - name: "footer"
+    label: "Футер"
+    files:
+      - file: "content/footer.json"
+        label: "Футер"
+        name: "footer"
+        fields:
+          - { label: "Назва сайту", name: "title", widget: "string" }
+          - { label: "Опис", name: "description", widget: "text" }
+
+          - { label: "Заголовок 'Контакти'", name: "title_contacts", widget: "string" }
+          - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
+          - { label: "Заголовок 'Соцмережі'", name: "title_socials", widget: "string" }
+
+          - { label: "Телефон", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Адреса", name: "address", widget: "string" }

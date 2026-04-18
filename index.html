@@ -19,7 +19,8 @@
     <!-- Для пошуку по карті -->
     <meta name="geo.region" content="UA-63">
     <meta name="geo.placename" content="Нова Водолага">
-    
+
+    <link rel="shortcut icon" href="./media/images/logo.png">
     <link rel="canonical" href="https://avtoshkola-nv.netlify.app">
 
     <link rel="stylesheet" href="tailwind.css">
@@ -63,57 +64,12 @@
                     <!-- ABOUT US TEXT SECTION -->
                     <div class="flex-1 p-5 sm:p-6 lg:p-8 space-y-5">
                         <div class="space-y-3">
-                            <h2 class="text-2xl sm:text-3xl font-semibold">Про нас</h2>
-                            <p class="text-sm sm:text-base text-white/85 leading-relaxed max-w-4xl">
-                                <span class="font-semibold">Нововодолазький РСТК ТСОУ</span> заснований Харківською обласною ТСОУ в 2000 році.
-                                Зареєстрований в ІТСЦ 10.05.2020.
-                            </p>
+                            <h2 id="about-title" class="text-2xl sm:text-3xl font-semibold"></h2>
+                            <p id="about-text" class="text-sm sm:text-base text-white/85 leading-relaxed max-w-4xl"></p>
                         </div>
 
                         <!-- ABOUT US FEATURES -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2  gap-4">
-                            
-                            <div class="feature">
-                                <div class="flex items-center gap-3 min-h-14">
-                                    <img src="./media/images/location.png" alt="location" class="h-10 w-10 object-contain shrink-0">
-                                    <p class="font-semibold text-base">Зручне розташування</p>
-                                </div>
-                                <p class="text-sm text-white/80 leading-relaxed">
-                                    Ми навчаємо майже в центрі, біля школи, на вул. Сергія Васильківського, 14.
-                                </p>
-                            </div>
-
-                            <div class="feature">
-                                <div class="flex items-center gap-3 min-h-14">
-                                    <img src="./media/images/education.png" alt="education" class="h-10 w-10 object-contain shrink-0">
-                                    <p class="font-semibold text-base">Професійне навчання</p>
-                                </div>
-                                <p class="text-sm text-white/80 leading-relaxed">
-                                    Навчання категоріям А, А1, B. Усі технічні засоби в доброму стані.
-                                </p>
-                            </div>
-
-                            <div class="feature">
-                                <div class="flex items-center gap-3 min-h-14">
-                                    <img src="./media/images/experience.png" alt="experience" class="h-10 w-10 object-contain shrink-0">
-                                    <p class="font-semibold text-base">Досвідчені інструктори</p>
-                                </div>
-                                <p class="text-sm text-white/80 leading-relaxed">
-                                    Наші інструктори мають практичний досвід і допомагають пройти навчання комфортно.
-                                </p>
-                            </div>
-
-                            <div class="feature">
-                                <div class="flex items-center gap-3 min-h-14">
-                                    <img src="./media/images/badge.webp" alt="experience" class="h-10 w-10 object-contain shrink-0">
-                                    <p class="font-semibold text-base">Високий відсоток здачі</p>
-                                </div>
-                                <p class="text-sm text-white/80 leading-relaxed">
-                                    Більшість студентів здає теорію з першого разу. Підготовка до реальних умов іспитів, індивідуальний підхід.
-                                </p>
-                            </div>
-
-                        </div>
+                        <div id="features-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
                     </div>
                 </div>
             </div>
@@ -122,33 +78,16 @@
         <!-- PHOTO SECTION -->
         <section class="mt-12 sm:mt-16">
             <div class="flex items-end justify-between gap-4 mb-4">
-                <h2 class="font-semibold text-white text-2xl sm:text-3xl ml-4">Фото</h2>
+                <h2 id="carousel-title" class="font-semibold text-white text-2xl sm:text-3xl ml-4"></h2>
             </div>
 
             <div id="school-carousel" class="relative w-full" data-carousel="slide">
                 <div class="relative overflow-hidden rounded-3xl bg-white/10 border border-white/15 shadow-2xl aspect-[16/9]">
-                    
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="./media/images/carousel/1.jpg" class="absolute block w-full h-full object-cover" alt="Фото закладу 1">
-                    </div>
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="./media/images/carousel/2.jpg" class="absolute block w-full h-full object-cover" alt="Фото закладу 2">
-                    </div>
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="./media/images/carousel/3.jpg" class="absolute block w-full h-full object-cover" alt="Фото закладу 3">
-                    </div>
-                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="./media/images/carousel/4.jpg" class="absolute block w-full h-full object-cover" alt="Фото закладу 4">
-                    </div>
+                    <div id="carousel-items"></div>
                 </div>
 
                 <!-- indicators -->
-                <div class="absolute z-30 flex -translate-x-1/2 bottom-4 left-1/2 gap-2">
-                    <button type="button" class="w-2.5 h-2.5 rounded-full bg-white/60" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                    <button type="button" class="w-2.5 h-2.5 rounded-full bg-white/30" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                    <button type="button" class="w-2.5 h-2.5 rounded-full bg-white/30" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                    <button type="button" class="w-2.5 h-2.5 rounded-full bg-white/30" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                </div>
+                <div id="carousel-indicators" class="absolute z-30 flex -translate-x-1/2 bottom-4 left-1/2 gap-2"></div>
 
                 <!-- controls -->
                 <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-3 sm:px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
@@ -176,218 +115,30 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 
                 <div class="bg-white/10 backdrop-blur-md rounded-3xl border border-white/15 shadow-2xl p-5 sm:p-6">
-                    <h2 class="text-2xl sm:text-3xl font-semibold mb-5">Ціни</h2>
+                    <h2 id="prices-title" class="text-2xl sm:text-3xl font-semibold mb-5"></h2>
 
                     <div class="flex flex-col space-y-5">
                         <div>
-                            <h3 class="text-lg font-semibold mb-3 text-yellow-300">Теорія</h3>
+                            <h3 id="prices-theory-text" class="text-lg font-semibold mb-3 text-yellow-300"></h3>
                             <div class="overflow-hidden rounded-2xl border border-white/10">
                                 <div class="grid grid-cols-3 bg-white/10 px-4 py-3 text-sm font-semibold">
-                                    <div>Категорія</div>
-                                    <div>Ціна</div>
-                                    <div>Термін</div>
+                                    <div id="prices-category-text"></div>
+                                    <div id="prices-price-text"></div>
+                                    <div id="prices-duration-text"></div>
                                 </div>
-                                <div class="divide-y divide-white/10 text-sm">
-                                    <div class="grid grid-cols-3 px-4 py-3">
-                                        <div>
-                                            <p class="flex items-center text-sm text-white/80">
-                                                А
-                                                <button data-popover-target="popover-theory-a" data-popover-placement="bottom-end" type="button">
-                                                    <svg class="w-4 h-4 text-white/60 hover:text-white ms-2 transition"
-                                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                            d="M9.529 9.988a2.502 2.502 0 1 1 5 .191A2.441 2.441 0 0 1 12 12.582V14m-.01 3.008H12M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                                                    </svg>
-                                                    <span class="sr-only">Show information</span>
-                                                </button>
-                                            </p>
-                                            <div data-popover id="popover-theory-a" role="tooltip"
-                                                    class="absolute z-10 invisible opacity-0 transition-opacity duration-300
-                                                    w-72 p-4 rounded-xl shadow-lg
-                                                    bg-gray-500/70 backdrop-blur-md border border-white/20 text-white">
-                                                <div>
-                                                    <h3 class="font-semibold text-white mb-2">
-                                                        Категорія "А"
-                                                    </h3>
-                                                    <p class="text-sm text-white/80 mb-2 leading-relaxed">
-                                                        Мотоцикли та інші двоколісні транспортні засоби, які мають двигун з робочим об'ємом 50 куб. сантиметрів і більше або електродвигун потужністю 4 кВт і більше; Право на керування транспортними засобами надається особам, які досягли шістнадцятирічного віку.
-                                                    </p>
-                                                </div>
-                                                <div data-popper-arrow class="bg-gray-500/70"></div>
-                                            </div>
-                                        </div>
-                                        <div>5 000 грн</div>
-                                        <div>1–2 тижні</div>
-                                    </div>
-                                    <div class="grid grid-cols-3 px-4 py-3">
-                                        <div>
-                                            <p class="flex items-center text-sm text-white/80">
-                                                А1
-                                                <button data-popover-target="popover-theory-a1" data-popover-placement="bottom-end" type="button">
-                                                    <svg class="w-4 h-4 text-white/60 hover:text-white ms-2 transition"
-                                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                            d="M9.529 9.988a2.502 2.502 0 1 1 5 .191A2.441 2.441 0 0 1 12 12.582V14m-.01 3.008H12M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                                                    </svg>
-                                                    <span class="sr-only">Show information</span>
-                                                </button>
-                                            </p>
-                                            <div data-popover id="popover-theory-a1" role="tooltip"
-                                                    class="absolute z-10 invisible opacity-0 transition-opacity duration-300
-                                                    w-72 p-4 rounded-xl shadow-lg
-                                                    bg-gray-500/70 backdrop-blur-md border border-white/20 text-white">
-                                                <div>
-                                                    <h3 class="font-semibold text-white mb-2">
-                                                        Категорія "А1"
-                                                    </h3>
-                                                    <p class="text-sm text-white/80 mb-2 leading-relaxed">
-                                                        Мопеди, моторолери та інші двоколісні транспортні засоби, які мають двигун з робочим об'ємом до 50 куб. сантиметрів або електродвигун потужністю до 4 кВт; Право на керування транспортними засобами надається особам, які досягли шістнадцятирічного віку.
-                                                    </p>
-                                                </div>
-                                                <div data-popper-arrow class="bg-gray-500/70"></div>
-                                            </div>
-                                        </div>
-                                        <div>5 000 грн</div>
-                                        <div>1–2 місяці</div>
-                                    </div>
-                                    <div class="grid grid-cols-3 px-4 py-3">
-                                        <div>
-                                            <p class="flex items-center text-sm text-white/80">
-                                                В
-                                                <button data-popover-target="popover-theory-b" data-popover-placement="bottom-end" type="button">
-                                                    <svg class="w-4 h-4 text-white/60 hover:text-white ms-2 transition"
-                                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                            d="M9.529 9.988a2.502 2.502 0 1 1 5 .191A2.441 2.441 0 0 1 12 12.582V14m-.01 3.008H12M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                                                    </svg>
-                                                    <span class="sr-only">Show information</span>
-                                                </button>
-                                            </p>
-                                            <div data-popover id="popover-theory-b" role="tooltip"
-                                                    class="absolute z-10 invisible opacity-0 transition-opacity duration-300
-                                                    w-72 p-4 rounded-xl shadow-lg
-                                                    bg-gray-500/70 backdrop-blur-md border border-white/20 text-white">
-                                                <div>
-                                                    <h3 class="font-semibold text-white mb-2">
-                                                        Категорія "В"
-                                                    </h3>
-                                                    <p class="text-sm text-white/80 mb-2 leading-relaxed">
-                                                        Автомобілі, дозволена максимальна маса яких не перевищує 3 500 кілограмів, а кількість сидячих місць, крім сидіння водія, – восьми, право на керування транспортними засобами надається особам, які досягли вісімнадцятирічного віку.
-                                                    </p>
-                                                </div>
-                                                <div data-popper-arrow class="bg-gray-500/70"></div>
-                                            </div>
-                                        </div>
-                                        <div>5 000 грн</div>
-                                        <div>1–2 місяці</div>
-                                    </div>
-                                </div>
+                                <div id="theory-prices" class="divide-y divide-white/10 text-sm"></div>
                             </div>
                         </div>
 
                         <div>
-                            <h3 class="text-lg font-semibold mb-3 text-yellow-300">Практика</h3>
+                            <h3 id="prices-practice-text" class="text-lg font-semibold mb-3 text-yellow-300">Практика</h3>
                             <div class="overflow-hidden rounded-2xl border border-white/10">
                                 <div class="grid grid-cols-3 bg-white/10 px-4 py-3 text-sm font-semibold">
-                                    <div>Категорія</div>
-                                    <div>Ціна</div>
-                                    <div>Термін</div>
+                                    <div id="prices-category-text"></div>
+                                    <div id="prices-price-text"></div>
+                                    <div id="prices-duration-text"></div>
                                 </div>
-                                <div class="divide-y divide-white/10 text-sm">
-                                    <div class="grid grid-cols-3 px-4 py-3">
-                                        <div>
-                                            <p class="flex items-center text-sm text-white/80">
-                                                А
-                                                <button data-popover-target="popover-practice-a" data-popover-placement="bottom-end" type="button">
-                                                    <svg class="w-4 h-4 text-white/60 hover:text-white ms-2 transition"
-                                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                            d="M9.529 9.988a2.502 2.502 0 1 1 5 .191A2.441 2.441 0 0 1 12 12.582V14m-.01 3.008H12M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                                                    </svg>
-                                                    <span class="sr-only">Show information</span>
-                                                </button>
-                                            </p>
-                                            <div data-popover id="popover-practice-a" role="tooltip"
-                                                    class="absolute z-10 invisible opacity-0 transition-opacity duration-300
-                                                    w-72 p-4 rounded-xl shadow-lg
-                                                    bg-gray-500/70 backdrop-blur-md border border-white/20 text-white">
-                                                <div>
-                                                    <h3 class="font-semibold text-white mb-2">
-                                                        Категорія "А"
-                                                    </h3>
-                                                    <p class="text-sm text-white/80 mb-2 leading-relaxed">
-                                                        Мотоцикли та інші двоколісні транспортні засоби, які мають двигун з робочим об'ємом 50 куб. сантиметрів і більше або електродвигун потужністю 4 кВт і більше; Право на керування транспортними засобами надається особам, які досягли шістнадцятирічного віку.
-                                                    </p>
-                                                </div>
-                                                <div data-popper-arrow class="bg-gray-500/70"></div>
-                                            </div>
-                                        </div>
-                                        <div>15000-25200 грн</div>
-                                        <div>1-2 місяці</div>
-                                    </div>
-                                    <div class="grid grid-cols-3 px-4 py-3">
-                                        <div>
-                                            <p class="flex items-center text-sm text-white/80">
-                                                А1
-                                                <button data-popover-target="popover-practice-a1" data-popover-placement="bottom-end" type="button">
-                                                    <svg class="w-4 h-4 text-white/60 hover:text-white ms-2 transition"
-                                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                            d="M9.529 9.988a2.502 2.502 0 1 1 5 .191A2.441 2.441 0 0 1 12 12.582V14m-.01 3.008H12M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                                                    </svg>
-                                                    <span class="sr-only">Show information</span>
-                                                </button>
-                                            </p>
-                                            <div data-popover id="popover-practice-a1" role="tooltip"
-                                                    class="absolute z-10 invisible opacity-0 transition-opacity duration-300
-                                                    w-72 p-4 rounded-xl shadow-lg
-                                                    bg-gray-500/70 backdrop-blur-md border border-white/20 text-white">
-                                                <div>
-                                                    <h3 class="font-semibold text-white mb-2">
-                                                        Категорія "А1"
-                                                    </h3>
-                                                    <p class="text-sm text-white/80 mb-2 leading-relaxed">
-                                                        Мопеди, моторолери та інші двоколісні транспортні засоби, які мають двигун з робочим об'ємом до 50 куб. сантиметрів або електродвигун потужністю до 4 кВт; Право на керування транспортними засобами надається особам, які досягли шістнадцятирічного віку.
-                                                    </p>
-                                                </div>
-                                                <div data-popper-arrow class="bg-gray-500/70"></div>
-                                            </div>
-                                        </div>
-                                        <div>15000-25200 грн</div>
-                                        <div>1-2 місяці</div>
-                                    </div>
-                                    <div class="grid grid-cols-3 px-4 py-3">
-                                        <div>
-                                            <p class="flex items-center text-sm text-white/80">
-                                                В
-                                                <button data-popover-target="popover-practice-b" data-popover-placement="bottom-end" type="button">
-                                                    <svg class="w-4 h-4 text-white/60 hover:text-white ms-2 transition"
-                                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                            d="M9.529 9.988a2.502 2.502 0 1 1 5 .191A2.441 2.441 0 0 1 12 12.582V14m-.01 3.008H12M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                                                    </svg>
-                                                    <span class="sr-only">Show information</span>
-                                                </button>
-                                            </p>
-                                            <div data-popover id="popover-practice-b" role="tooltip"
-                                                    class="absolute z-10 invisible opacity-0 transition-opacity duration-300
-                                                    w-72 p-4 rounded-xl shadow-lg
-                                                    bg-gray-500/70 backdrop-blur-md border border-white/20 text-white">
-                                                <div>
-                                                    <h3 class="font-semibold text-white mb-2">
-                                                        Категорія "В"
-                                                    </h3>
-                                                    <p class="text-sm text-white/80 mb-2 leading-relaxed">
-                                                        Автомобілі, дозволена максимальна маса яких не перевищує 3 500 кілограмів, а кількість сидячих місць, крім сидіння водія, – восьми, право на керування транспортними засобами надається особам, які досягли вісімнадцятирічного віку.
-                                                    </p>
-                                                </div>
-                                                <div data-popper-arrow class="bg-gray-500/70"></div>
-                                            </div>
-                                        </div>
-                                        <div>20000-30500 грн</div>
-                                        <div>1-2 місяці</div>
-                                    </div>
-                                </div>
+                                <div id="practice-prices" class="divide-y divide-white/10 text-sm"></div>
                             </div>
                         </div>
                     
@@ -400,7 +151,7 @@
 
                 <div class="bg-white/10 backdrop-blur-md rounded-3xl border border-white/15 shadow-2xl overflow-hidden">
                     <div class="p-5 sm:p-6">
-                        <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Контакти та локація</h2>
+                        <h2 id="contact-title" class="text-2xl sm:text-3xl font-semibold mb-4"></h2>
                     </div>
                     <div class="aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3]">
                         <iframe
@@ -413,9 +164,9 @@
                         </iframe>
                     </div>
                     <div class="p-5 sm:p-6 space-y-2 text-sm sm:text-base">
-                        <p><span class="font-semibold">Телефон:</span> (099) 442-25-41</p>
-                        <p><span class="font-semibold">Email:</span> dosaaf.nvodolaga@gmail.com</p>
-                        <p><span class="font-semibold">Адреса:</span> Нова Водолага, Харківська область, Україна, 63200</p>
+                        <p><span class="font-semibold">Телефон:</span> <span id="contact-phone"></span></p>
+                        <p><span class="font-semibold">Email:</span> <span id="contact-email"></span></p>
+                        <p><span class="font-semibold">Адреса:</span> <span id="contact-address"></span></p>
                     </div>
                 </div>
 
@@ -435,29 +186,24 @@
                     <div class="space-y-4">
                         <div class="flex items-center gap-3">
                             <img src="./media/images/logo.png" class="h-10">
-                            <span class="text-lg font-semibold text-white">
-                                Автошкола ТСОУ
-                            </span>
+                            <span id="footer-title" class="text-lg font-semibold text-white"></span>
                         </div>
-                        <p class="text-sm text-white/70">
-                            Професійне навчання водіїв категорій A, А1, B.
-                            Досвідчені інструктори та сучасний підхід.
-                        </p>
+                        <p id="footer-description" class="text-sm text-white/70"></p>
                     </div>
 
                     <!-- CONTACTS -->
                     <div>
-                        <h3 class="text-white font-semibold mb-4">Контакти</h3>
+                        <h3 id="footer-contacts" class="text-white font-semibold mb-4"></h3>
                         <ul class="space-y-2 text-sm text-white/70">
-                            <li>📍  Харківська обл, смт Нова Водолага, вул Сергія Васильківського, 14</li>
-                            <li>📞 (099) 442-25-41</li>
-                            <li>✉️ dosaaf.nvodolaga@gmail.com</li>
+                            <li id="contact-footer-address"></li>
+                            <li id="contact-footer-phone"></li>
+                            <li id="contact-footer-email"></li>
                         </ul>
                     </div>
 
                     <!-- CATEGORIES -->
                     <div>
-                        <h3 class="text-white font-semibold mb-4">Категорії</h3>
+                        <h3 id="footer-categories" class="text-white font-semibold mb-4"></h3>
                         <ul class="space-y-2 text-sm text-white/70">
                             <li>
                                 <p class="flex items-center text-sm text-white/80">
@@ -545,7 +291,7 @@
 
                     <!-- SOCIALS -->
                     <div>
-                        <h3 class="text-white font-semibold mb-4">Ми в соцмережах</h3>
+                        <h3 id="footer-socials" class="text-white font-semibold mb-4"></h3>
                         <div class="flex gap-4">
 
                             <a href="#" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition">
@@ -677,9 +423,9 @@
         </div>
     </div>
 
-    <script src="./flowbite.min.js"></script>
+    <script src="./flowbite/flowbite.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="./script.js"></script>
+    <script type="module" src="./script.js"></script>
 </body>
 </html>

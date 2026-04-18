@@ -1,5 +1,5 @@
-import { Modal } from 'flowbite';
-
+// ---------------------
+// EMAIL.JS CODE SECTION
 (function() {
     emailjs.init({
         publicKey: "b17p2jq-p35lOlL_L",
@@ -36,7 +36,7 @@ function toastSuccess(error)
 }
 
 window.onload = function() {
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
+    document.querySelector('form#contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
 
         const $modal = document.getElementById("auth-modal");
@@ -85,4 +85,217 @@ window.onload = function() {
                 toastError("Щось пішло не так");
             });
     });
+}
+
+// ----------------------
+// DECAP CMS CODE SECTION
+document.addEventListener('DOMContentLoaded', async function() {
+    await LoadInAboutJSON();
+    await LoadInContactsJSON();
+    await LoadInFooterJSON();
+    await LoadInPricesJSON();
+    await LoadInGalleryJSON();
+    await LoadInFeaturesJSON();
+});
+
+// ABOUT
+async function LoadInAboutJSON()
+{
+    try {
+        const response = await fetch('/content/about.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
+        const data = await response.json();
+        const titleEl = document.getElementById('about-title');
+        const textEl = document.getElementById('about-text');
+        
+        if (titleEl) titleEl.textContent = data.title;
+        if (textEl) textEl.textContent = data.text;
+    } catch (error) {
+        console.error("Помилка:", error);
+    }
+}
+
+// CONTACTS
+async function LoadInContactsJSON()
+{
+    try {
+        const response = await fetch('/content/contacts.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
+        const data = await response.json();
+        const titleEl = document.getElementById('contact-title');
+        const phoneEl = document.getElementById('contact-phone');
+        const emailEl = document.getElementById('contact-email');
+        const addressEl = document.getElementById('contact-address');
+        
+        if (titleEl) titleEl.textContent = data.title;
+        if (phoneEl) phoneEl.textContent = data.phone;
+        if (emailEl) emailEl.textContent = data.email;
+        if (addressEl) addressEl.textContent = data.address;
+    } catch (error) {
+        console.error("Помилка:", error);
+    }
+}
+
+// FOOTER
+async function LoadInFooterJSON()
+{
+    try {
+        const response = await fetch('/content/footer.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
+        const data = await response.json();
+        
+        const titleEl = document.getElementById('footer-title');
+        const phoneEl = document.getElementById('contact-footer-phone');
+        const emailEl = document.getElementById('contact-footer-email');
+        const addressEl = document.getElementById('contact-footer-address');
+
+        const contactsEl = document.getElementById('footer-contacts');
+        const descriptionEl = document.getElementById('footer-description');
+        
+        const categoriesEl = document.getElementById('footer-categories');
+        const socialsEl = document.getElementById('footer-socials');
+
+        if (titleEl) titleEl.textContent = data.title;
+        if (phoneEl) phoneEl.textContent = data.phone;
+        if (emailEl) emailEl.textContent = data.email;
+        if (addressEl) addressEl.textContent = data.address;
+
+        if (contactsEl) contactsEl.textContent = data.title_contacts;
+        if (descriptionEl) descriptionEl.textContent = data.description;
+
+        if (categoriesEl) categoriesEl.textContent = data.title_categories;
+        if (socialsEl) socialsEl.textContent = data.title_socials;
+
+    } catch (error) {
+        console.error("Помилка:", error);
+    }
+}
+
+// PRICES
+async function LoadInPricesJSON()
+{
+    try {
+        const response = await fetch('/content/prices.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
+        const data = await response.json();
+
+        const titleEl = document.getElementById('prices-title');
+        const theoryTextEl = document.getElementById('prices-theory-text');
+        const practiceTextEl = document.getElementById('prices-practice-text');
+        const categoryTextEl = document.getElementById('prices-category-text');
+        const priceTextEl = document.getElementById('prices-price-text');
+        const durationTextEl = document.getElementById('prices-duration-text');
+
+        const theoryEl = document.getElementById('theory-prices');
+        const practiceEl = document.getElementById('practice-prices');
+
+        if (titleEl) titleEl.textContent = data.title;
+        if (theoryTextEl) theoryTextEl.textContent = data.theory_text;
+        if (practiceTextEl) practiceTextEl.textContent = data.practice_text;
+        if (categoryTextEl) categoryTextEl.textContent = data.category_text;
+        if (priceTextEl) priceTextEl.textContent = data.price_text;
+        if (durationTextEl) durationTextEl.textContent = data.duration_text;
+
+        if (theoryEl)
+        {
+            data.theory.forEach(item => {
+                theoryEl.innerHTML += `
+                    <div class="grid grid-cols-3 px-4 py-3">
+                    <div>${item.category}</div>
+                    <div>${item.price}</div>
+                    <div>${item.duration}</div>
+                    </div>
+                `;
+            });
+        }
+
+        if (practiceEl)
+        {
+            data.practice.forEach(item => {
+                practiceEl.innerHTML += `
+                    <div class="grid grid-cols-3 px-4 py-3">
+                    <div>${item.category}</div>
+                    <div>${item.price}</div>
+                    <div>${item.duration}</div>
+                    </div>
+                `;
+            });
+        }
+    } catch (error) {
+        console.error("Помилка:", error);
+    }
+}
+
+// GALLERY - CAROUSEL
+async function LoadInGalleryJSON()
+{
+    try {
+        const response = await fetch('/content/gallery.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
+        const data = await response.json();
+
+        const carouselTitleEl = document.getElementById('carousel-title');
+        if (carouselTitleEl) carouselTitleEl.textContent = data.title;
+
+        const itemsContainer = document.getElementById('carousel-items');
+        const indicatorsContainer = document.getElementById('carousel-indicators');
+
+        data.carousel.forEach((item, index) =>
+        {
+            itemsContainer.innerHTML += `
+                <div class="${index === 0 ? '' : 'hidden'} duration-700 ease-in-out" data-carousel-item>
+                <img src="./media/images/carousel/${item}" class="absolute block w-full h-full object-cover" alt="Фото ${index + 1}">
+                </div>
+            `;
+
+            indicatorsContainer.innerHTML += `
+                <button type="button"
+                class="w-2.5 h-2.5 rounded-full ${index === 0 ? 'bg-white/60' : 'bg-white/30'}"
+                aria-current="${index === 0 ? 'true' : 'false'}"
+                aria-label="Slide ${index + 1}"
+                data-carousel-slide-to="${index}">
+                </button>
+            `;
+        });
+
+        if (typeof window.initFlowbite === 'function') window.initFlowbite();
+
+    } catch (error) {
+        console.error("Помилка:", error);
+    }
+}
+
+// FEATURES
+async function LoadInFeaturesJSON()
+{
+    try {
+        const response = await fetch('/content/features.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
+        const data = await response.json();
+
+        const container = document.getElementById('features-container');
+        if (container)
+        {
+            for (let feature of data.features) {
+                container.innerHTML += `
+                <div class="feature">
+                    <div class="flex items-center gap-3 min-h-14">
+                    <img src="${feature.icon}" class="h-10 w-10 object-contain">
+                    <p class="font-semibold text-base">${feature.title}</p>
+                    </div>
+                    <p class="text-sm text-white/80">${feature.description}</p>
+                </div>
+                `;
+            }
+        }
+        
+    } catch (error) {
+        console.error("Помилка:", error);
+    }
 }
