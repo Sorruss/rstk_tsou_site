@@ -21,7 +21,7 @@ collections:
         fields:
           - { label: "Заголовок", name: "title", widget: "string" }
           - { label: "Текст", name: "text", widget: "text" }
-          - { label: "Зображення", name: "image", widget: "image" }
+          - { label: "Зображення 'Про нас'", name: "image", widget: "image" }
 
   # =========================
   # ПЕРЕВАГИ
@@ -53,6 +53,7 @@ collections:
         name: "gallery"
         fields:
           - { label: "Заголовок", name: "title", widget: "string" }
+          - { label: "Фонове зображення", name: "background_image", widget: "image" }
           - label: "Карусель"
             name: "carousel"
             widget: "list"

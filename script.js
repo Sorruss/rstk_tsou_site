@@ -108,9 +108,13 @@ async function LoadInAboutJSON()
         const data = await response.json();
         const titleEl = document.getElementById('about-title');
         const textEl = document.getElementById('about-text');
+        const imageEl = document.getElementById('about-image');
         
         if (titleEl) titleEl.textContent = data.title;
         if (textEl) textEl.textContent = data.text;
+        if (imageEl)
+            imageEl.style.backgroundImage = `url('${data.image}')`;
+
     } catch (error) {
         console.error("Помилка:", error);
     }
@@ -249,7 +253,7 @@ async function LoadInGalleryJSON()
         {
             itemsContainer.innerHTML += `
                 <div class="${index === 0 ? '' : 'hidden'} duration-700 ease-in-out" data-carousel-item>
-                <img src="./media/images/carousel/${item}" class="absolute block w-full h-full object-cover" alt="Фото ${index + 1}">
+                <img src="${item}" class="absolute block w-full h-full object-cover" alt="Фото ${index + 1}">
                 </div>
             `;
 
@@ -264,6 +268,10 @@ async function LoadInGalleryJSON()
         });
 
         if (typeof window.initFlowbite === 'function') window.initFlowbite();
+
+        const backgroundEl = document.getElementById('body-background');
+        if (backgroundEl)
+            backgroundEl.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${data.background_image}')`;
 
     } catch (error) {
         console.error("Помилка:", error);

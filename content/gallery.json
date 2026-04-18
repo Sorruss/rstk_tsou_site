@@ -1,4 +1,10 @@
 {
     "title": "Фото",
-    "carousel": ["1.jpg", "2.jpg", "3.jpg", "4.jpg"]
+    "carousel": [
+        "./media/images/carousel/1.jpg", 
+        "./media/images/carousel/2.jpg", 
+        "./media/images/carousel/3.jpg", 
+        "./media/images/carousel/4.jpg"
+    ],
+    "background_image": "./media/images/bg.jpg"
 }
