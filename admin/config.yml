@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "media/images/uploads"
-public_folder: "/media/images/uploads"
+media_folder: "media/images"
+public_folder: "/media/images"
 
 locale: "uk"
 
@@ -61,7 +61,7 @@ collections:
             field:
               label: "Назва файлу (наприклад 1.jpg)"
               name: "image"
-              widget: "string"
+              widget: "image"
 
   # =========================
   # ЦІНИ

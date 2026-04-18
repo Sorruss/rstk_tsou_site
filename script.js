@@ -253,7 +253,7 @@ async function LoadInGalleryJSON()
         {
             itemsContainer.innerHTML += `
                 <div class="${index === 0 ? '' : 'hidden'} duration-700 ease-in-out" data-carousel-item>
-                <img src="${item}" class="absolute block w-full h-full object-cover" alt="Фото ${index + 1}">
+                <img src="${item.image}" class="absolute block w-full h-full object-cover" alt="Фото ${index + 1}">
                 </div>
             `;
 
