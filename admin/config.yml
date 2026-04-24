@@ -35,7 +35,7 @@ collections:
           - { label: "Заголовок секції", name: "title", widget: "string" }
 
           - label: "Оголошення"
-            name: "items"
+            name: "announcements"
             widget: "list"
             summary: "{{fields.title}}"
             fields:
@@ -57,9 +57,6 @@ collections:
           - { label: "Текст", name: "text", widget: "text" }
           - { label: "Зображення", name: "image", widget: "image" }
 
-  - name: "features"
-    label: "Переваги"
-    files:
       - file: "content/features.json"
         label: "Переваги"
         name: "features"
@@ -110,9 +107,6 @@ collections:
               - { label: "Ціна", name: "price", widget: "string" }
               - { label: "Термін", name: "duration", widget: "string" }
 
-  - name: "contacts"
-    label: "Контакти"
-    files:
       - file: "content/contacts.json"
         label: "Контакти"
         name: "contacts"
@@ -142,6 +136,10 @@ collections:
             fields:
               - { label: "Назва", name: "title", widget: "string" }
 
+      - file: "content/documents.json"
+        label: "Порада"
+        name: "advice"
+        fields:
           - { label: "Заголовок блоку поради", name: "tip_title", widget: "string" }
           - { label: "Текст поради", name: "tip_text", widget: "text" }
 
@@ -164,9 +162,6 @@ collections:
             fields:
               - { label: "Зображення", name: "image", widget: "image" }
 
-  - name: "videos"
-    label: "Відео"
-    files:
       - file: "content/videos.json"
         label: "Відео"
         name: "videos"
@@ -193,11 +188,32 @@ collections:
           - { label: "Назва сайту", name: "title", widget: "string" }
           - { label: "Опис", name: "description", widget: "text" }
 
+      - file: "content/footer.json"
+        label: "Контакти"
+        name: "contacts"
+        fields:
           - { label: "Заголовок 'Контакти'", name: "title_contacts", widget: "string" }
           - { label: "Телефон", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Адреса", name: "address", widget: "string" }
 
+      - file: "content/footer.json"
+        label: "Категорії"
+        name: "categories"
+        fields:
+          - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
+          - label: "Категорії"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Назва категорії", name: "name", widget: "string" }
+              - { label: "Опис", name: "description", widget: "text" }
+
+      - file: "content/footer.json"
+        label: "Соцмережі"
+        name: "socials"
+        fields:
           - { label: "Заголовок 'Соцмережі'", name: "title_socials", widget: "string" }
           - label: "Посилання на соцмережі"
             name: "social_links"
@@ -207,12 +223,3 @@ collections:
               - { label: "Назва", name: "name", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
               - { label: "Іконка", name: "icon", widget: "string" }
-
-          - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
-          - label: "Категорії"
-            name: "categories"
-            widget: "list"
-            summary: "{{fields.name}}"
-            fields:
-              - { label: "Назва категорії", name: "name", widget: "string" }
-              - { label: "Опис", name: "description", widget: "text" }
