@@ -3,22 +3,22 @@
         {
             "title": "Зручне розташування",
             "description": "Ми навчаємо майже в центрі, біля школи, на вул. Сергія Васильківського, 14.",
-            "icon": "/media/images/location.png"
+            "icon": "/media/location.png"
         },
         {
             "title": "Професійне навчання",
             "description": "Навчання категоріям А, А1, B. Усі технічні засоби в доброму стані.",
-            "icon": "/media/images/education.png"
+            "icon": "/media/education.png"
         },
         {
         "title": "Досвідчені інструктори",
         "description": "Наші інструктори мають практичний досвід і допомагають пройти навчання комфортно.",
-        "icon": "/media/images/experience.png"
+        "icon": "/media/experience.png"
         },
         {
             "title": "Високий відсоток здачі",
             "description": "Більшість студентів здає теорію з першого разу. Підготовка до реальних умов іспитів, індивідуальний підхід.",
-            "icon": "/media/images/badge.webp"
+            "icon": "/media/badge.webp"
         }
     ]
 }

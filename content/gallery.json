@@ -1,10 +1,10 @@
 {
     "title": "Фото",
     "carousel": [
-        { "image": "/media/images/1.jpg" }, 
-        { "image": "/media/images/car.jpg" }, 
-        { "image": "/media/images/facility.jpg" }, 
-        { "image": "/media/images/4.jpg" } 
+        { "image": "/media/1.jpg" }, 
+        { "image": "/media/car.jpg" }, 
+        { "image": "/media/facility.jpg" }, 
+        { "image": "/media/4.jpg" } 
     ],
-    "background_image": "/media/images/bg.jpg"
+    "background_image": "/media/bg.jpg"
 }
