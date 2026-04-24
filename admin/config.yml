@@ -13,7 +13,6 @@ collections:
   # =========================
   - name: "title"
     label: "Титул"
-    media_folder: "media/images"
     files:
       - file: "content/title.json"
         label: "Титул"
@@ -192,6 +191,15 @@ collections:
           - { label: "Телефон", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
 
+          - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
+          - label: "Категорії"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Назва категорії", name: "name", widget: "string" }
+              - { label: "Опис", name: "description", widget: "text" }
+
           - { label: "Заголовок 'Соцмережі'", name: "title_socials", widget: "string" }
           - label: "Посилання на соцмережі"
             name: "social_links"
@@ -201,12 +209,3 @@ collections:
               - { label: "Назва", name: "name", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
               - { label: "Іконка", name: "icon", widget: "file" }
-
-          - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
-          - label: "Категорії"
-            name: "categories"
-            widget: "list"
-            summary: "{{fields.name}}"
-            fields:
-              - { label: "Назва категорії", name: "name", widget: "string" }
-              - { label: "Опис", name: "description", widget: "text" }
