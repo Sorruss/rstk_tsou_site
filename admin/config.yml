@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "media/images"
-public_folder: "/media/images"
+media_folder: "media"
+public_folder: "/media"
 
 locale: "uk"
 
@@ -136,12 +136,11 @@ collections:
             fields:
               - { label: "Назва", name: "title", widget: "string" }
 
-      - file: "content/documents.json"
-        label: "Порада"
-        name: "advice"
-        fields:
-          - { label: "Заголовок блоку поради", name: "tip_title", widget: "string" }
-          - { label: "Текст поради", name: "tip_text", widget: "text" }
+          - label: "Порада"
+            name: "advice"
+            fields:
+              - { label: "Заголовок блоку поради", name: "tip_title", widget: "string" }
+              - { label: "Текст поради", name: "tip_text", widget: "text" }
 
   # =========================
   # МЕДІА
@@ -188,38 +187,35 @@ collections:
           - { label: "Назва сайту", name: "title", widget: "string" }
           - { label: "Опис", name: "description", widget: "text" }
 
-      - file: "content/footer.json"
-        label: "Контакти"
-        name: "contacts"
-        fields:
-          - { label: "Заголовок 'Контакти'", name: "title_contacts", widget: "string" }
-          - { label: "Телефон", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Адреса", name: "address", widget: "string" }
+          - label: "Контакти"
+            name: "contacts"
+            fields:
+              - { label: "Заголовок 'Контакти'", name: "title_contacts", widget: "string" }
+              - { label: "Телефон", name: "phone", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Адреса", name: "address", widget: "string" }
 
-      - file: "content/footer.json"
-        label: "Категорії"
-        name: "categories"
-        fields:
-          - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
           - label: "Категорії"
             name: "categories"
-            widget: "list"
-            summary: "{{fields.name}}"
             fields:
-              - { label: "Назва категорії", name: "name", widget: "string" }
-              - { label: "Опис", name: "description", widget: "text" }
+              - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
+              - label: "Категорії"
+                name: "categories"
+                widget: "list"
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Назва категорії", name: "name", widget: "string" }
+                  - { label: "Опис", name: "description", widget: "text" }
 
-      - file: "content/footer.json"
-        label: "Соцмережі"
-        name: "socials"
-        fields:
-          - { label: "Заголовок 'Соцмережі'", name: "title_socials", widget: "string" }
-          - label: "Посилання на соцмережі"
-            name: "social_links"
-            widget: "list"
-            summary: "{{fields.name}}"
+          - label: "Соцмережі"
+            name: "socials"
             fields:
-              - { label: "Назва", name: "name", widget: "string" }
-              - { label: "URL", name: "url", widget: "string" }
-              - { label: "Іконка", name: "icon", widget: "string" }
+              - { label: "Заголовок 'Соцмережі'", name: "title_socials", widget: "string" }
+              - label: "Посилання на соцмережі"
+                name: "social_links"
+                widget: "list"
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "Назва", name: "name", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "Іконка", name: "icon", widget: "string" }
