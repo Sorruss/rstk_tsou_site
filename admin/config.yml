@@ -136,12 +136,8 @@ collections:
             fields:
               - { label: "Назва", name: "title", widget: "string" }
 
-          - label: "Порада"
-            name: "advice"
-            widget: "object"
-            fields:
-              - { label: "Заголовок блоку поради", name: "tip_title", widget: "string" }
-              - { label: "Текст поради", name: "tip_text", widget: "text" }
+          - { label: "Заголовок блоку поради", name: "tip_title", widget: "string" }
+          - { label: "Текст поради", name: "tip_text", widget: "text" }
 
   # =========================
   # МЕДІА
@@ -188,38 +184,27 @@ collections:
           - { label: "Назва сайту", name: "title", widget: "string" }
           - { label: "Опис", name: "description", widget: "text" }
 
-          - label: "Контакти"
-            name: "contacts"
-            widget: "object"
+          - { label: "Заголовок 'Контакти'", name: "title_contacts", widget: "string" }
+          - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
+          - { label: "Заголовок 'Соцмережі'", name: "title_socials", widget: "string" }
+
+          - { label: "Телефон", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Адреса", name: "address", widget: "string" }
+
+          - label: "Посилання на соцмережі"
+            name: "social_links"
+            widget: "list"
+            summary: "{{fields.name}}"
             fields:
-              - { label: "Заголовок", name: "title_contacts", widget: "string" }
-              - { label: "Телефон", name: "phone", widget: "string" }
-              - { label: "Email", name: "email", widget: "string" }
-              - { label: "Адреса", name: "address", widget: "string" }
+              - { label: "Назва", name: "name", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Іконка", name: "icon", widget: "string", required: false }
 
           - label: "Категорії"
             name: "categories"
-            widget: "object"
+            widget: "list"
+            summary: "{{fields.name}}"
             fields:
-              - { label: "Заголовок", name: "title_categories", widget: "string" }
-              - label: "Категорії"
-                name: "categories_section"
-                widget: "list"
-                summary: "{{fields.name}}"
-                fields:
-                  - { label: "Назва категорії", name: "name", widget: "string" }
-                  - { label: "Опис", name: "description", widget: "text" }
-
-          - label: "Соцмережі"
-            name: "socials"
-            widget: "object"
-            fields:
-              - { label: "Заголовок", name: "title_socials", widget: "string" }
-              - label: "Посилання на соцмережі"
-                name: "social_links"
-                widget: "list"
-                summary: "{{fields.name}}"
-                fields:
-                  - { label: "Назва", name: "name", widget: "string" }
-                  - { label: "URL", name: "url", widget: "string" }
-                  - { label: "Іконка", name: "icon", widget: "string" }
+              - { label: "Назва категорії", name: "name", widget: "string" }
+              - { label: "Опис", name: "description", widget: "text" }
