@@ -110,10 +110,12 @@ async function LoadInTitleJSON()
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         
         const data = await response.json();
+        const logoEl = document.getElementById('title-logo');
         const titleEl = document.getElementById('title-title');
         const licenseEl = document.getElementById('title-license');
         const certificateEl = document.getElementById('title-certificate');
         
+        if (logoEl) logoEl.innerHTML += `<img src="${data.logo}" alt="logo" class="w-36 sm:w-40 lg:w-48 h-auto">`;
         if (titleEl) titleEl.textContent = data.title;
         if (licenseEl) licenseEl.textContent = data.license;
         if (certificateEl) certificateEl.textContent = data.certificate;
@@ -450,6 +452,7 @@ async function LoadInFooterJSON()
         
         const data = await response.json();
         
+        const logoEl = document.getElementById('footer-logo');
         const titleEl = document.getElementById('footer-title');
         const descriptionEl = document.getElementById('footer-description');
 
@@ -504,6 +507,7 @@ async function LoadInFooterJSON()
             `;
         });
 
+        if (logoEl) logoEl.src = data.logo;
         if (titleEl) titleEl.textContent = data.title;
         if (descriptionEl) descriptionEl.textContent = data.description;
 

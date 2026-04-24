@@ -13,11 +13,13 @@ collections:
   # =========================
   - name: "title"
     label: "Титул"
+    media_folder: "media/images"
     files:
       - file: "content/title.json"
         label: "Титул"
         name: "title"
         fields:
+          - { label: "Зображення", name: "logo", widget: "image" }
           - { label: "Назва закладу", name: "title", widget: "string" }
           - { label: "Ліцензія", name: "license", widget: "string" }
           - { label: "Сертифікат", name: "certificate", widget: "string" }
@@ -181,17 +183,16 @@ collections:
         label: "Підвал"
         name: "footer"
         fields:
+          - { label: "Зображення", name: "logo", widget: "image" }
           - { label: "Назва сайту", name: "title", widget: "string" }
           - { label: "Опис", name: "description", widget: "text" }
 
           - { label: "Заголовок 'Контакти'", name: "title_contacts", widget: "string" }
-          - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
-          - { label: "Заголовок 'Соцмережі'", name: "title_socials", widget: "string" }
-
+          - { label: "Адреса", name: "address", widget: "string" }
           - { label: "Телефон", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
-          - { label: "Адреса", name: "address", widget: "string" }
 
+          - { label: "Заголовок 'Соцмережі'", name: "title_socials", widget: "string" }
           - label: "Посилання на соцмережі"
             name: "social_links"
             widget: "list"
@@ -199,8 +200,9 @@ collections:
             fields:
               - { label: "Назва", name: "name", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
-              - { label: "Іконка", name: "icon", widget: "string", required: false }
+              - { label: "Іконка", name: "icon", widget: "file" }
 
+          - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
           - label: "Категорії"
             name: "categories"
             widget: "list"
