@@ -455,7 +455,7 @@ async function LoadInFooterJSON()
         const logoEl = document.getElementById('footer-logo');
         const titleEl = document.getElementById('footer-title');
         const descriptionEl = document.getElementById('footer-description');
-
+        
         const contactsEl = document.getElementById('footer-contacts');
         const phoneEl = document.getElementById('contact-footer-phone');
         const emailEl = document.getElementById('contact-footer-email');
@@ -518,8 +518,10 @@ async function LoadInFooterJSON()
 
         if (categoriesEl) categoriesEl.textContent = data.title_categories;
 
-
         if (socialsEl) socialsEl.textContent = data.title_socials;
+
+        const licenseEl = document.getElementById('footer-license');
+        if (licenseEl) licenseEl.textContent = data.license;
 
         if (typeof window.initFlowbite === 'function') window.initFlowbite();
 
