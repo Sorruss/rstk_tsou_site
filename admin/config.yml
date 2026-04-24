@@ -8,6 +8,40 @@ public_folder: "/media/images"
 locale: "uk"
 
 collections:
+  # =========================
+  # ТИТУЛ
+  # =========================
+  - name: "title"
+    label: "Титул"
+    files:
+      - file: "content/title.json"
+        label: "Титул"
+        name: "title"
+        fields:
+          - { label: "Назва закладу", name: "title", widget: "string" }
+          - { label: "Ліцензія", name: "license", widget: "string" }
+          - { label: "Сертифікат", name: "certificate", widget: "string" }
+
+  # =========================
+  # ОГОЛОШЕННЯ
+  # =========================
+  - name: "announcements"
+    label: "Оголошення"
+    files:
+      - file: "content/announcements.json"
+        label: "Оголошення"
+        name: "announcements"
+        fields:
+          - { label: "Заголовок секції", name: "title", widget: "string" }
+
+          - label: "Оголошення"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Мітка", name: "badge", widget: "string"}
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Текст", name: "text", widget: "text" }
 
   # =========================
   # ПРО НАС
@@ -16,16 +50,13 @@ collections:
     label: "Про нас"
     files:
       - file: "content/about.json"
-        label: "Секція 'Про нас'"
+        label: "Про нас"
         name: "about"
         fields:
           - { label: "Заголовок", name: "title", widget: "string" }
           - { label: "Текст", name: "text", widget: "text" }
-          - { label: "Зображення 'Про нас'", name: "image", widget: "image" }
+          - { label: "Зображення", name: "image", widget: "image" }
 
-  # =========================
-  # ПЕРЕВАГИ
-  # =========================
   - name: "features"
     label: "Переваги"
     files:
@@ -43,28 +74,7 @@ collections:
               - { label: "Іконка", name: "icon", widget: "image" }
 
   # =========================
-  # ГАЛЕРЕЯ
-  # =========================
-  - name: "gallery"
-    label: "Галерея"
-    files:
-      - file: "content/gallery.json"
-        label: "Фото"
-        name: "gallery"
-        fields:
-          - { label: "Заголовок", name: "title", widget: "string" }
-          - { label: "Фонове зображення", name: "background_image", widget: "image" }
-          - label: "Карусель"
-            name: "carousel"
-            widget: "list"
-            summary: "{{fields}}"
-            field:
-              label: "Назва файлу (наприклад 1.jpg)"
-              name: "image"
-              widget: "image"
-
-  # =========================
-  # ЦІНИ
+  # ІНФОРМАЦІЯ
   # =========================
   - name: "prices"
     label: "Ціни"
@@ -73,14 +83,14 @@ collections:
         label: "Ціни"
         name: "prices"
         fields:
-          - { label: "Заголовок", name: "title", widget: "string" }
+          - { label: "Заголовок секції", name: "title", widget: "string" }
 
           - { label: "Текст 'Теорія'", name: "theory_text", widget: "string" }
           - { label: "Текст 'Практика'", name: "practice_text", widget: "string" }
 
-          - { label: "Категорія (заголовок)", name: "category_text", widget: "string" }
-          - { label: "Ціна (заголовок)", name: "price_text", widget: "string" }
-          - { label: "Термін (заголовок)", name: "duration_text", widget: "string" }
+          - { label: "Назва колонки 'Категорія'", name: "category_text", widget: "string" }
+          - { label: "Назва колонки 'Ціна'", name: "price_text", widget: "string" }
+          - { label: "Назва колонки 'Термін'", name: "duration_text", widget: "string" }
 
           - label: "Теорія"
             name: "theory"
@@ -100,9 +110,6 @@ collections:
               - { label: "Ціна", name: "price", widget: "string" }
               - { label: "Термін", name: "duration", widget: "string" }
 
-  # =========================
-  # КОНТАКТИ
-  # =========================
   - name: "contacts"
     label: "Контакти"
     files:
@@ -110,28 +117,102 @@ collections:
         label: "Контакти"
         name: "contacts"
         fields:
-          - { label: "Заголовок", name: "title", widget: "string" }
+          - { label: "Заголовок секції", name: "title", widget: "string" }
           - { label: "Телефон", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Адреса", name: "address", widget: "string" }
 
   # =========================
-  # ФУТЕР
+  # ДОКУМЕНТИ
+  # =========================
+  - name: "documents"
+    label: "Документи"
+    files:
+      - file: "content/documents.json"
+        label: "Документи"
+        name: "documents"
+        fields:
+          - { label: "Заголовок секції", name: "title", widget: "string" }
+          - { label: "Вступний текст", name: "text", widget: "text" }
+
+          - label: "Список документів"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Назва", name: "title", widget: "string" }
+
+          - { label: "Заголовок блоку поради", name: "tip_title", widget: "string" }
+          - { label: "Текст поради", name: "tip_text", widget: "text" }
+
+  # =========================
+  # МЕДІА
+  # =========================
+  - name: "gallery"
+    label: "Фото"
+    files:
+      - file: "content/gallery.json"
+        label: "Фото"
+        name: "gallery"
+        fields:
+          - { label: "Заголовок", name: "title", widget: "string" }
+
+          - label: "Фото-карусель"
+            name: "carousel"
+            widget: "list"
+            summary: "{{fields.image}}"
+            fields:
+              - { label: "Зображення", name: "image", widget: "image" }
+
+  - name: "videos"
+    label: "Відео"
+    files:
+      - file: "content/videos.json"
+        label: "Відео"
+        name: "videos"
+        fields:
+          - { label: "Заголовок", name: "title", widget: "string" }
+
+          - label: "Відео-карусель"
+            name: "carousel"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Відеофайл", name: "video", widget: "file" }
+
+  # =========================
+  # ПІДВАЛ
   # =========================
   - name: "footer"
-    label: "Футер"
+    label: "Підвал"
     files:
       - file: "content/footer.json"
-        label: "Футер"
+        label: "Підвал"
         name: "footer"
         fields:
           - { label: "Назва сайту", name: "title", widget: "string" }
           - { label: "Опис", name: "description", widget: "text" }
 
           - { label: "Заголовок 'Контакти'", name: "title_contacts", widget: "string" }
-          - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
-          - { label: "Заголовок 'Соцмережі'", name: "title_socials", widget: "string" }
-
           - { label: "Телефон", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Адреса", name: "address", widget: "string" }
+
+          - { label: "Заголовок 'Соцмережі'", name: "title_socials", widget: "string" }
+          - label: "Посилання на соцмережі"
+            name: "social_links"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Назва", name: "name", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "Іконка", name: "icon", widget: "string" }
+
+          - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
+          - label: "Категорії"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Назва категорії", name: "name", widget: "string" }
+              - { label: "Опис", name: "description", widget: "text" }

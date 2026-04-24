@@ -2,8 +2,8 @@
     "title": "Фото",
     "carousel": [
         { "image": "/media/images/1.jpg" }, 
-        { "image": "/media/images/2.jpg" }, 
-        { "image": "/media/images/3.jpg" }, 
+        { "image": "/media/images/car.jpg" }, 
+        { "image": "/media/images/facility.jpg" }, 
         { "image": "/media/images/4.jpg" } 
     ],
     "background_image": "/media/images/bg.jpg"

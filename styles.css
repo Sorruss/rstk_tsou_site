@@ -18,8 +18,4 @@ body {
     .mybutton {
         @apply text-white focus:outline-none px-5 py-3 bg-linear-to-r from-yellow-600 to-red-700 hover:from-yellow-700 hover:to-red-800 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer font-semibold;
     }
-
-    .feature {
-        @apply p-4 sm:p-5 bg-white/15 backdrop-blur-md rounded-2xl border border-white/10 shadow-lg;
-    }
 }

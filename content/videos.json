@@ -1,0 +1,9 @@
+{
+    "title": "Відео",
+    "carousel": [
+        { "video": "/media/video/1.mp4" }, 
+        { "video": "/media/video/1.mp4" }, 
+        { "video": "/media/video/1.mp4" }, 
+        { "video": "/media/video/1.mp4" } 
+    ]
+}
