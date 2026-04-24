@@ -138,6 +138,7 @@ collections:
 
           - label: "Порада"
             name: "advice"
+            widget: "object"
             fields:
               - { label: "Заголовок блоку поради", name: "tip_title", widget: "string" }
               - { label: "Текст поради", name: "tip_text", widget: "text" }
@@ -189,18 +190,20 @@ collections:
 
           - label: "Контакти"
             name: "contacts"
+            widget: "object"
             fields:
-              - { label: "Заголовок 'Контакти'", name: "title_contacts", widget: "string" }
+              - { label: "Заголовок", name: "title_contacts", widget: "string" }
               - { label: "Телефон", name: "phone", widget: "string" }
               - { label: "Email", name: "email", widget: "string" }
               - { label: "Адреса", name: "address", widget: "string" }
 
           - label: "Категорії"
             name: "categories"
+            widget: "object"
             fields:
-              - { label: "Заголовок 'Категорії'", name: "title_categories", widget: "string" }
+              - { label: "Заголовок", name: "title_categories", widget: "string" }
               - label: "Категорії"
-                name: "categories"
+                name: "categories_section"
                 widget: "list"
                 summary: "{{fields.name}}"
                 fields:
@@ -209,8 +212,9 @@ collections:
 
           - label: "Соцмережі"
             name: "socials"
+            widget: "object"
             fields:
-              - { label: "Заголовок 'Соцмережі'", name: "title_socials", widget: "string" }
+              - { label: "Заголовок", name: "title_socials", widget: "string" }
               - label: "Посилання на соцмережі"
                 name: "social_links"
                 widget: "list"
