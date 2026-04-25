@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: sorruss/rstk_tsou_site
+  repo: Sorruss/rstk_tsou_site
   branch: main
 
 media_folder: "media"
