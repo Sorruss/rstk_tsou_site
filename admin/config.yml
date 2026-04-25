@@ -3,7 +3,7 @@ backend:
   repo: Sorruss/rstk_tsou_site
   branch: main
   auth_endpoint: auth
-  base_url: https://decap-oauth-proxy.spama6666.workers.dev\
+  base_url: https://decap-oauth-proxy.spama6666.workers.dev
   site_domain: sorruss.github.io
 
 media_folder: "media"
