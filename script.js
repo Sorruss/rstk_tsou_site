@@ -168,7 +168,7 @@ async function LoadInAnnouncementsJSON()
 async function LoadInAboutJSON()
 {
     try {
-        const response = await fetch('/content/about.json');
+        const response = await fetch('./content/about.json');
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         
         const data = await response.json();
@@ -190,7 +190,7 @@ async function LoadInAboutJSON()
 async function LoadInFeaturesJSON()
 {
     try {
-        const response = await fetch('/content/features.json');
+        const response = await fetch('./content/features.json');
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         
         const data = await response.json();
@@ -220,7 +220,7 @@ async function LoadInFeaturesJSON()
 async function LoadInPricesJSON()
 {
     try {
-        const response = await fetch('/content/prices.json');
+        const response = await fetch('./content/prices.json');
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         
         const data = await response.json();
@@ -292,7 +292,7 @@ async function LoadInPricesJSON()
 async function LoadInContactsJSON()
 {
     try {
-        const response = await fetch('/content/contacts.json');
+        const response = await fetch('./content/contacts.json');
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         
         const data = await response.json();
@@ -314,7 +314,7 @@ async function LoadInContactsJSON()
 async function LoadInDocumentsJSON()
 {
     try {
-        const response = await fetch('/content/documents.json');
+        const response = await fetch('./content/documents.json');
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         
         const data = await response.json();
@@ -353,7 +353,7 @@ async function LoadInDocumentsJSON()
 async function LoadInGalleryJSON()
 {
     try {
-        const response = await fetch('/content/gallery.json');
+        const response = await fetch('./content/gallery.json');
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         
         const data = await response.json();
@@ -397,7 +397,7 @@ async function LoadInGalleryJSON()
 async function LoadInVideosJSON()
 {
     try {
-        const response = await fetch('/content/videos.json');
+        const response = await fetch('./content/videos.json');
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         
         const data = await response.json();
@@ -447,7 +447,7 @@ async function LoadInVideosJSON()
 async function LoadInFooterJSON()
 {
     try {
-        const response = await fetch('/content/footer.json');
+        const response = await fetch('./content/footer.json');
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         
         const data = await response.json();
