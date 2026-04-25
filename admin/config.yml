@@ -5,6 +5,7 @@ backend:
   auth_endpoint: auth
   base_url: https://decap-oauth-proxy.spama6666.workers.dev
   site_domain: sorruss.github.io
+  display_url: https://sorruss.github.io/rstk_tsou_site
 
 media_folder: "media"
 public_folder: "/media"
