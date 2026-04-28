@@ -1,7 +1,7 @@
 {
     "title": "Автошкола ТСОУ",
     "description": "Професійне навчання водіїв категорій A, А1, B. Досвідчені інструктори та сучасний підхід.",
-    "logo": "/rstk_tsou_site/media/logo.png",
+    "logo": "/media/logo.png",
 
     "title_contacts": "Контакти",
     "address": "📍 Харківська обл, смт Нова Водолага, вул Сергія Васильківського, 14",
@@ -29,17 +29,17 @@
         {
             "name": "TikTok",
             "url": "",
-            "icon": "/rstk_tsou_site/media/tik-tok-white.png"
+            "icon": "/media/tik-tok-white.png"
         },
         {
             "name": "Instagram",
             "url": "https://www.instagram.com/driveskillhab_vodolaga?igsh=MXRibmtzbmJqcWZlMg==",
-            "icon": "/rstk_tsou_site/media/instagram-white.png"
+            "icon": "/media/instagram-white.png"
         },
         {
             "name": "Facebook",
             "url": "",
-            "icon": "/rstk_tsou_site/media/facebook-white.png"
+            "icon": "/media/facebook-white.png"
         }
     ],
     "license": "© 2026 Нововодолазька автошкола. Всі права захищені."

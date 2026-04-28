@@ -1,10 +1,10 @@
 {
     "title": "Фото",
     "carousel": [
-        { "image": "/rstk_tsou_site/media/1.jpg" }, 
-        { "image": "/rstk_tsou_site/media/car.jpg" }, 
-        { "image": "/rstk_tsou_site/media/facility.jpg" }, 
-        { "image": "/rstk_tsou_site/media/4.jpg" } 
+        { "image": "/media/1.jpg" }, 
+        { "image": "/media/car.jpg" }, 
+        { "image": "/media/facility.jpg" }, 
+        { "image": "/media/4.jpg" } 
     ],
-    "background_image": "/rstk_tsou_site/media/bg.jpg"
+    "background_image": "/media/bg.jpg"
 }
