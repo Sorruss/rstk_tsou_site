@@ -10,8 +10,6 @@ body {
 .background-facility {
     background-size: cover;
     background-position: center;
-    border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
 }
 
 @layer components {

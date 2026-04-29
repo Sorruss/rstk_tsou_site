@@ -335,7 +335,7 @@ async function LoadInDocumentsJSON()
             for (let document of data.items) {
                 container.innerHTML += `
                 <li class="flex gap-3 items-start">
-                    <span class="mt-1.5 flex items-center justify-center h-5 w-5 rounded-full bg-yellow-300 text-xs font-bold shrink-0">
+                    <span class="mt-1.5 flex items-center justify-center h-5 w-5 rounded-full bg-yellow-300/30 text-xs font-bold shrink-0">
                         ✓
                     </span>
                     <span>${document.title}</span>
